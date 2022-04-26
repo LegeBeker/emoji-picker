@@ -1,4 +1,4 @@
-$(".emoji").on('change keyup paste', function () {
+$(".emoji-shortcode").on('change keyup paste', function () {
     var text = $(this).val();
     var emoji = false;
 
@@ -6,7 +6,7 @@ $(".emoji").on('change keyup paste', function () {
         var array = text.split(":");
         for (var i = 0; i < array.length; i++) {
             if (typeof array[i + 1] !== 'undefined' && i % 2 != 0) {
-                var key = Object.keys(emojiData).find(key => emojiData[key] === array[i]);
+                var key = Object.keys(emojiData).find(key => emojiData[key] === array[i] || emojiData[key][0] === array[i] || emojiData[key][1] === array[i]);
                 if (key) {
                     array[i] = String.fromCodePoint("0x" + key);
                     emoji = true;
