@@ -1,3 +1,8 @@
+
+$(".emoji-picker").before("<div style='display:inline-block;position:relative;'>");
+$(".emoji-picker").css("display", "block");
+$(".emoji-picker").after( "<a style='position:absolute;bottom:10px;right:10px;' href='google.com'>☺</a></div>");
+
 var emojiData = {
     "2049": "interrobang",
     "2122": "tm",
