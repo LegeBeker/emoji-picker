@@ -5,25 +5,33 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        html, body, div {
-            display: grid;
-            justify-content: center;
-            align-content: center;
-            text-align: center;
+        html,
+        body {
             font-size: 1.25rem;
             font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        .popOut {
+            float: left;
+            width: 250px;
+            margin-top: 5px;
+            padding: 5px;
+            background-color: #F9F9F9;
+            border: 1px solid #DDD;
+            display: block;
+            position: absolute;
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <h2>emoji picker 😄</h2>
-        <p>Use classes "emoji-picker" and "emoji-shortcode" for seperate functions added to textarea of input field, or
-            "emoji" for both.<br>Shortcode is used for adding emojis using two ":" with the description in the middle. Do ":smile:" to get
-            started.</p>
-        <textarea style="font-size: 1.25rem;" class="emoji-picker" cols="50" rows="10"></textarea>
-    </div>
+    <h2>emoji picker 😄</h2>
+    <p>Use classes "emoji-picker" and "emoji-shortcode" for seperate functions added to textarea of input field, or
+        "emoji" for both.<br>Shortcode is used for adding emojis using two ":" with the description in the middle.
+        Do ":smile:" to get
+        started.</p>
+    <textarea class="emoji-picker" cols="50" rows="10"></textarea>
     <script src='emoji-picker.js'></script>
 </body>
 

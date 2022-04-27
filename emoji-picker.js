@@ -1,7 +1,22 @@
+$(".emoji-picker").wrap("<div style='display:inline-block;position:relative;'></div>").css("display", "block").after("<div class='emoji-window'><a class='emoji-button' style='-webkit-user-select:none;user-select:none;cursor:pointer;color:grey;text-decoration:none;display:block;align-items:flex-start;position:absolute;top:7px;right:10px;'>☺</a></div>");
 
-$(".emoji-picker").before("<div style='display:inline-block;position:relative;'>");
-$(".emoji-picker").css("display", "block");
-$(".emoji-picker").after( "<a style='position:absolute;bottom:10px;right:10px;' href='google.com'>☺</a></div>");
+$(".emoji-button").click(function() {
+    if ($(".emoji-picker-window").length <= 0) {
+        $(this).after("<p class='emoji-picker-window popOut' style='display:block;align-items:flex-start;position:absolute;top:30px;right:10px;'>test</p>");
+    } else {
+        $(".emoji-picker-window").remove();
+    }
+});
+
+$(document).click(function() {
+    $(".emoji-button").click(function(){
+        return false;
+    });
+    
+    if ($(".emoji-picker-window").length >= 0) {
+        $(".emoji-picker-window").remove();
+    }
+});
 
 var emojiData = {
     "2049": "interrobang",
